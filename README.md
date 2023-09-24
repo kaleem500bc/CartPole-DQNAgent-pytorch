@@ -7,7 +7,7 @@ This is an implementation of a Deep Q-Network (DQN) agent for reinforcement lear
 ## Replay Buffer
 The **ReplayBuffer** class is a dataset of past experiences (state, action, reward, next state) that the agent can use for learning.
 
-## Training and Running the Agent
+## Training
 **Create an agent with specified state and action sizes**
 ```python
 agent = Agent(state_size, action_size)
