@@ -29,16 +29,11 @@ loss = training(agent, replay_buffer, epochs=50, batch_size=10)
 avg_score = 0
 state = env.reset()
 done = False
-display_img = plt.imshow(env.render("rgb_array"))
-
 while not done:
   state = torch.tensor(state,dtype=torch.float).to("cuda")
   action = agent.model(state)
   action = int(torch.argmax(action).item())
   state, reward, done, _ = env.step(action)
-  display_img.set_data(env.render("rgb_array"))
-  clear_output(wait=True)
-  display.display(plt.gcf())
   avg_score += 1
 print(avg_score)
 ```
